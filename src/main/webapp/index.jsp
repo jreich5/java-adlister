@@ -3,7 +3,7 @@
 <html>
 <head>
     <title><%= "some title" %></title>
-</head>
+</head>x
 <body>
     <c:if test="true">
         <h1>Variable names should be very descriptive</h1>
