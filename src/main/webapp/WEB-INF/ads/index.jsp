@@ -5,6 +5,7 @@
     <jsp:include page="/partials/head.jsp">
         <jsp:param name="title" value="Viewing All The Ads" />
     </jsp:include>
+    <jsp:include page="../../partials/color-preference.jsp" />
 </head>
 <body>
 <jsp:include page="/partials/navbar.jsp" />
