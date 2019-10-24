@@ -1,6 +1,7 @@
 public class DaoFactory {
     private static Ads adsDao;
     private static Products productsDao;
+    private static Users usersDao;
 
     public static Ads getAdsDao() {
         if (adsDao == null) {
@@ -14,6 +15,13 @@ public class DaoFactory {
             productsDao = new ListOfProducts();
         }
         return productsDao;
+    }
+
+    public static Users getUsersDao(){
+        if(usersDao == null){
+            usersDao = new MySQLUsersDao();
+        }
+        return usersDao;
     }
 
 }
