@@ -10,19 +10,27 @@ public class MyDB {
         try {
             DriverManager.registerDriver(new Driver());
             Connection connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost/employees?serverTimezone=UTC&useSSL=false",
+                    "jdbc:mysql://localhost/catlister_db?serverTimezone=UTC&useSSL=false",
                     "root",
                     "codeup"
             );
 
             Statement stmt = connection.createStatement();
-            String sql = "SELECT * FROM employees limit 5";
+            String sql = "SELECT * FROM ads";
             ResultSet resultSet = stmt.executeQuery(sql);
 
             while(resultSet.next()){
-                System.out.println("resultSet.getLong(emp_no) = " + resultSet.getLong("emp_no"));
-                System.out.println("resultSet = " + resultSet.getString("first_name"));
-                System.out.println("resultSet.getString(\"gender\") = " + resultSet.getString("gender"));
+                System.out.println("resultSet.getLong(2) = " + resultSet.getLong(2));
+                System.out.println("resultSet.getLong(2) = " + resultSet.getString(3));
+            }
+
+            stmt.execute("DELETE from ads where user_id = 1");
+
+            resultSet = stmt.executeQuery(sql);
+
+            while(resultSet.next()){
+                System.out.println("resultSet.getLong(2) = " + resultSet.getLong(2));
+                System.out.println("resultSet.getLong(2) = " + resultSet.getString(3));
             }
 
         } catch (SQLException e) {
