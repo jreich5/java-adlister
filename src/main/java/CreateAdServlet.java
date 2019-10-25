@@ -18,7 +18,7 @@ public class CreateAdServlet extends HttpServlet {
             request.getParameter("title"),
             request.getParameter("description")
         );
-        DaoFactory.getAdsDao().insert(ad);
-        response.sendRedirect("/ads");
+        Long id = DaoFactory.getAdsDao().insert(ad);
+        response.sendRedirect("/ads/" + id);
     }
 }
